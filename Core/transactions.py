@@ -140,3 +140,26 @@ def absolute(x):
         return -x
     else:
         return x
+    
+def minumum(*args):
+    """
+        Finds the smallest of the entered numbers
+
+        Parameters:
+            args (int | float):
+                The numbers entered, from which the smallest is to be found
+
+        Return value:
+            int | float:
+                The smallest number found
+    """
+
+    min_number = args[0]
+
+    for i in args[1:]:
+        if i < min_number:
+            min_number = i
+        else:
+            continue
+    return min_number
+
