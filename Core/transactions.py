@@ -204,3 +204,10 @@ def avg(*args):
         addition += i
 
     return addition / len(args)
+
+def factorial(n):
+    fac = 1
+    while n > 0:
+        fac = fac*n
+        n -= 1
+    return fac
