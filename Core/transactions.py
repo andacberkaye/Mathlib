@@ -206,8 +206,20 @@ def avg(*args):
     return addition / len(args)
 
 def factorial(n):
+    """
+        Calculates the factorial of the entered number
+
+        Parameters:
+            n (int | float):
+                Calculates the factorial of the entered number
+
+        Return value:
+            int | float:
+                The number obtained as the factorial
+    """
     fac = 1
     while n > 0:
         fac = fac*n
         n -= 1
     return fac
+
