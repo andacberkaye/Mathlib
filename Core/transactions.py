@@ -35,14 +35,12 @@ def sub(*args):
 
     if len(args) == 0:
         raise ValueError("At least one number is required")
-    
-    else:
-        subtract = args[0]
+    subtract = args[0]
 
-        for i in args[1:]:
-            subtract -= i
-        
-        return subtract
+    for i in args[1:]:
+        subtract -= i
+    
+    return subtract
 
 def division(p, b):
     """
@@ -62,6 +60,27 @@ def division(p, b):
         
     if b == 0:
         raise ZeroDivisionError("A divisor cannot be zero")
-    else: 
-        return p / b
+    return p / b
     
+def multi(*args):
+    """
+        Multiplication the entered numbers in order.
+
+        Parameters:
+            *args (int | float):
+                Any number of integer or float values.
+
+        Return value:
+            int | float:
+                The multiplication of all entered numbers.
+    """
+
+    if len(args) == 0:
+        raise ValueError("At least one number is required")
+    
+    multiplication = args[0]
+
+    for i in args[1:]:
+        multiplication *= i
+    
+    return multiplication
