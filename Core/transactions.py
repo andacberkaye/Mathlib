@@ -163,3 +163,24 @@ def minumum(*args):
             continue
     return min_number
 
+def maximum(*args):
+    """
+        Finds the biggest of the entered numbers
+
+        Parameters:
+            args (int | float):
+                The numbers entered, from which the biggest is to be found
+
+        Return value:
+            int | float:
+                The biggest number found
+    """
+
+    max_number = args[0]
+
+    for i in args[1:]:
+        if i > max_number:
+            max_number = i
+        else:
+            continue
+    return max_number
