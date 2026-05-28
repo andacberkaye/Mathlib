@@ -105,4 +105,22 @@ def mod(a, n):
         raise ZeroDivisionError("A divisor cannot be zero")
     return a % n
 
+def power(b,x):
+    """
+    Calculates the power of the first number raised to the second number
+
+        Parameters:
+            b (int | float):
+                The number to be raised to a power
+
+            x (int | float):
+                The exponent
+
+        Return value:
+            int | float:
+                The result of raising the first number to the second number
+    """
+
+    return b^x
+
 
