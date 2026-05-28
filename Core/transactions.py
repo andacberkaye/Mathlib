@@ -223,3 +223,20 @@ def factorial(n):
         n -= 1
     return fac
 
+def parity(x):
+    """
+        Determines whether the entered number is even or odd
+
+        Parameters:
+            x (int | float):
+                The number whose parity is to be determined
+
+        Return value:
+            int | float:
+                The result of the parity calculation
+    """
+
+    if x % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
