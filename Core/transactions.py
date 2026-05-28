@@ -184,3 +184,23 @@ def maximum(*args):
         else:
             continue
     return max_number
+
+def avg(*args):
+    """
+        Calculates the average of the entered numbers
+
+        Parameters:
+            args (int | float):
+                Calculates the average of the entered numbers
+
+        Return value:
+            int | float:
+                The calculated average
+    """
+
+    addition = 0
+
+    for i in args:
+        addition += i
+
+    return addition / len(args)
