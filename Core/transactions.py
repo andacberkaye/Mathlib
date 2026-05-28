@@ -1,14 +1,14 @@
 def add(*args):
     """
-    Adds the entered numbers.
+    Adds the entered numbers in order.
 
     Parameters:
         *args (int | float):
             Any number of integer or float values.
 
-    Returns:
+    Return value:
         int | float:
-            Sum of all entered numbers.
+            The sum of all entered numbers.
     """
 
     addition = 0
@@ -17,3 +17,27 @@ def add(*args):
         addition += i
     
     return addition
+
+def sub(*args):
+    """
+        Subtracts the entered numbers in order.
+
+        Parameters:
+            - At least one number is required
+
+            *args (int | float):
+                Any number of integer or float values.
+
+        Return value:
+            int | float:
+                The subtracting all entered numbers.
+    """
+    if len(args) == 0:
+        raise ValueError("At least one number is required")
+    else:
+        subtract = args[0]
+
+        for i in args[1:]:
+            subtract -= i
+        
+        return subtract
