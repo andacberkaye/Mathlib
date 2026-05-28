@@ -84,3 +84,25 @@ def multi(*args):
         multiplication *= i
     
     return multiplication
+
+def mod(a, n):
+    """
+        Calculates the modulus of the first number relative to the second.
+
+        Parameters:
+            a (int | float):
+                The number for which the modulus is calculated
+
+            n (int | float):
+                The divisor
+
+        Return value:
+            int | float:
+                The result of the modulus operation
+    """
+    
+    if n == 0:
+        raise ZeroDivisionError("A divisor cannot be zero")
+    return a % n
+
+
