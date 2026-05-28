@@ -121,6 +121,22 @@ def power(b,x):
                 The result of raising the first number to the second number
     """
 
-    return b^x
+    return b**x
 
+def absolute(x):
+    """
+        Calculates the absolute value of the entered number
 
+        Parameters:
+            x (int | float):
+                The number whose absolute value is calculated
+
+        Return value:
+            int | float:
+                The number whose absolute value is calculated
+    """
+
+    if x < 0:
+        return -x
+    else:
+        return x
