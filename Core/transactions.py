@@ -413,3 +413,28 @@ def add_range(start: float, end: float, amount: float = 1) -> float:
         current += amount
 
     return total
+
+def sqrt(a: float) -> float:
+    """
+    Calculates the square root of a number.
+
+    The function returns the value which, when multiplied by itself,
+    gives the original number (a).
+
+    Parameters:
+        a (float):
+            The number to calculate the square root of.
+            Must be >= 0 for real results.
+
+    Returns:
+        float:
+            The square root of the given number.
+
+    Raises:
+        ValueError:
+            If a is negative (since real square root is undefined).
+    """
+
+    if a < 0:
+        raise ValueError("Square root of negative number is not real")
+    return a ** 0.5
