@@ -284,3 +284,21 @@ def gcd(a, b):
         a, b = b, a % b
 
     return a
+
+def lcm(a: int, b: int) -> int:
+    """
+    Returns the least common multiple (LCM) of two integers.
+
+    Parameters:
+        a (int):
+            First integer.
+
+        b (int):
+            Second integer.
+
+    Return value:
+        int:
+            Least common multiple of the given integers.
+    """
+
+    return absolute(a * b) // gcd(a, b)
