@@ -242,6 +242,7 @@ def parity(x):
         return "Odd"
     
 def is_prime(x):
+
     """
         Determines whether the entered number is prime
 
@@ -262,3 +263,24 @@ def is_prime(x):
             return False
 
     return True
+
+def gcd(a, b):
+    """
+        Returns the greatest common divisor (GCD) of two integers.
+
+        Parameters:
+            a (int):
+                First integer.
+
+            b (int):
+                Second integer.
+
+        Return value:
+            int:
+                Greatest common divisor of the given integers.
+    """
+
+    while b != 0:
+        a, b = b, a % b
+
+    return a
