@@ -335,3 +335,42 @@ def prime_factors(a: int) -> list[int]:
 
     return factors
 
+def fibonacci(n: int, mode: str) -> int | list[int]:
+    """
+    Fibonacci number or series generator.
+
+    Parameters:
+        n (int):
+            Number of elements (for series) or position (for number mode)
+
+        mode (str):
+            "series" -> returns fibonacci series
+            "number" -> returns nth fibonacci number
+
+    Return value:
+        int | list[int]:
+            Fibonacci number or fibonacci sequence
+    """
+
+    if n < 0:
+        raise ValueError("n must be >= 0")
+
+    a, b = 0, 1
+
+    if mode == "number":
+        for _ in range(n):
+            a, b = b, a + b
+        return a
+
+    elif mode == "series":
+        series = []
+
+        for _ in range(n):
+            series.append(a)
+            a, b = b, a + b
+
+        return series
+
+    else:
+        raise ValueError("mode must be 'series' or 'number'")
+    
