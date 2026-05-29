@@ -374,3 +374,42 @@ def fibonacci(n: int, mode: str) -> int | list[int]:
     else:
         raise ValueError("mode must be 'series' or 'number'")
     
+def add_range(start: float, end: float, amount: float = 1) -> float:
+    """
+    Calculates the sum of numbers in a given range with a step value.
+
+    The function starts from 'start' and adds numbers up to 'end'
+    by increasing each step with 'amount'. If 'amount' is not provided,
+    it defaults to 1.
+
+    Parameters:
+        start (float):
+            The starting value of the range.
+
+        end (float):
+            The ending value of the range (inclusive).
+
+        amount (float, optional):
+            The step size between numbers. Default is 1.
+            Must not be 0.
+
+    Returns:
+        float:
+            The sum of all numbers in the range.
+
+    Raises:
+        ValueError:
+            If amount is 0.
+    """
+
+    if amount == 0:
+        raise ValueError("amount cannot be 0")
+
+    total = 0
+    current = start
+
+    while current <= end:
+        total += current
+        current += amount
+
+    return total
