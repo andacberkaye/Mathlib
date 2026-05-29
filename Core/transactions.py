@@ -264,7 +264,7 @@ def is_prime(x):
 
     return True
 
-def gcd(a, b):
+def gcd(a: int, b: int) -> int:
     """
         Returns the greatest common divisor (GCD) of two integers.
 
