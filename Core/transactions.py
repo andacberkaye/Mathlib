@@ -302,3 +302,29 @@ def lcm(a: int, b: int) -> int:
     """
 
     return absolute(a * b) // gcd(a, b)
+
+def prime_factors(a: int) -> list:
+    """
+        Returns the prime factors of a given integer.
+
+        Parameters:
+            number (int):
+                Integer to factorize.
+
+        Return value:
+            list:
+                List containing prime factors.
+    """
+
+    if a <= 1:
+        raise ValueError("Number must be greater than 1")
+    factors=[]
+    divisor = 2
+
+    while a > 1:
+        while a % divisor == 0:
+            factors.append(divisor)
+            a = a / divisor
+        divisor += 1
+
+    return factors
