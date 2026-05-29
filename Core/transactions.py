@@ -1,4 +1,4 @@
-def add(*args):
+def add(*args: float) -> float:
     """
     Adds the entered numbers in order.
 
@@ -18,7 +18,7 @@ def add(*args):
     
     return addition
 
-def sub(*args):
+def sub(*args: float) -> float:
     """
         Subtracts the entered numbers in order.
 
@@ -42,7 +42,7 @@ def sub(*args):
     
     return subtract
 
-def division(p, b):
+def division(p: float, b: float) -> float:
     """
         Divides two numbers.
 
@@ -62,7 +62,7 @@ def division(p, b):
         raise ZeroDivisionError("A divisor cannot be zero")
     return p / b
     
-def multi(*args):
+def multi(*args: float) -> float:
     """
         Multiplication the entered numbers in order.
 
@@ -85,7 +85,7 @@ def multi(*args):
     
     return multiplication
 
-def mod(a, n):
+def mod(a: float, n: float) -> float:
     """
         Calculates the modulus of the first number relative to the second.
 
@@ -105,7 +105,7 @@ def mod(a, n):
         raise ZeroDivisionError("A divisor cannot be zero")
     return a % n
 
-def power(b,x):
+def power(b: float,x: float) -> float:
     """
     Calculates the power of the first number raised to the second number
 
@@ -123,7 +123,7 @@ def power(b,x):
 
     return b**x
 
-def absolute(x):
+def absolute(x: float) -> float:
     """
         Calculates the absolute value of the entered number
 
@@ -141,7 +141,7 @@ def absolute(x):
     else:
         return x
     
-def minumum(*args):
+def minimum(*args: float) -> float:
     """
         Finds the smallest of the entered numbers
 
@@ -153,7 +153,8 @@ def minumum(*args):
             int | float:
                 The smallest number found
     """
-
+    if len(args) == 0:
+        raise ValueError("At least one number is required")
     min_number = args[0]
 
     for i in args[1:]:
@@ -163,7 +164,7 @@ def minumum(*args):
             continue
     return min_number
 
-def maximum(*args):
+def maximum(*args: float) -> float:
     """
         Finds the biggest of the entered numbers
 
@@ -175,7 +176,8 @@ def maximum(*args):
             int | float:
                 The biggest number found
     """
-
+    if len(args) == 0:
+        raise ValueError("At least one number is required") 
     max_number = args[0]
 
     for i in args[1:]:
@@ -185,7 +187,7 @@ def maximum(*args):
             continue
     return max_number
 
-def avg(*args):
+def avg(*args: float) -> float:
     """
         Calculates the average of the entered numbers
 
@@ -197,6 +199,8 @@ def avg(*args):
             int | float:
                 The calculated average
     """
+    if len(args) == 0:
+        raise ValueError("At least one number is required")
 
     addition = 0
 
@@ -205,7 +209,7 @@ def avg(*args):
 
     return addition / len(args)
 
-def factorial(n):
+def factorial(n: int) -> int:
     """
         Calculates the factorial of the entered number
 
@@ -217,13 +221,15 @@ def factorial(n):
             int | float:
                 The number obtained as the factorial
     """
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
     fac = 1
     while n > 0:
         fac = fac*n
         n -= 1
     return fac
 
-def parity(x):
+def parity(x: int) -> str:
     """
         Determines whether the entered number is even or odd
 
@@ -241,7 +247,7 @@ def parity(x):
     else:
         return "Odd"
     
-def is_prime(x):
+def is_prime(x: int) -> bool:
 
     """
         Determines whether the entered number is prime
@@ -283,7 +289,7 @@ def gcd(a: int, b: int) -> int:
     while b != 0:
         a, b = b, a % b
 
-    return a
+    return absolute(a)
 
 def lcm(a: int, b: int) -> int:
     """
@@ -303,7 +309,7 @@ def lcm(a: int, b: int) -> int:
 
     return absolute(a * b) // gcd(a, b)
 
-def prime_factors(a: int) -> list:
+def prime_factors(a: int) -> list[int]:
     """
         Returns the prime factors of a given integer.
 
@@ -324,7 +330,8 @@ def prime_factors(a: int) -> list:
     while a > 1:
         while a % divisor == 0:
             factors.append(divisor)
-            a = a / divisor
+            a //= divisor
         divisor += 1
 
     return factors
+
