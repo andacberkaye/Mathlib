@@ -559,9 +559,6 @@ def floor_number(x: float) -> int:
         return int(x)
     return int(x) - (1 if x < 0 else 0)
 
-import math
-
-
 def sin(x: float) -> float:
     """
     Calculates sine using Taylor series approximation.
@@ -582,7 +579,6 @@ def sin(x: float) -> float:
         term *= -x * x / ((2 * i + 2) * (2 * i + 3))
 
     return result
-
 
 def cos(x: float) -> float:
     """
@@ -605,7 +601,6 @@ def cos(x: float) -> float:
 
     return result
 
-
 def tan(x: float) -> float:
     """
     Calculates tangent as sin(x) / cos(x).
@@ -623,7 +618,6 @@ def tan(x: float) -> float:
         raise ValueError("tan undefined (cos(x) too close to 0)")
     return sin(x) / c
 
-
 def cot(x: float) -> float:
     """
     Calculates cotangent as cos(x) / sin(x).
@@ -640,7 +634,6 @@ def cot(x: float) -> float:
     if abs(s) < 1e-12:
         raise ValueError("cot undefined (sin(x) too close to 0)")
     return cos(x) / s
-
 
 def hypotenuse(a: float, b: float) -> float:
     """
