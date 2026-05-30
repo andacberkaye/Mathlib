@@ -456,3 +456,40 @@ def cube_root(x: float) -> float:
     """
 
     return absolute(x) ** (1 / 3)
+
+def nth_root(x: float, n: int) -> float:
+    """
+    Calculates the nth root of a number.
+
+    The function returns the value which, when raised to the power
+    of n, gives the original number.
+
+    Parameters:
+        x (float):
+            The number whose root is to be calculated.
+
+        n (int):
+            The degree of the root.
+
+    Returns:
+        float:
+            The nth root of the given number.
+
+    Raises:
+        ValueError:
+            If n is 0.
+            If x is negative and n is even.
+    """
+
+    if n == 0:
+        raise ValueError("n cannot be 0")
+
+    if x < 0 and n % 2 == 0:
+        raise ValueError("Even root of a negative number is not real")
+
+    if x >= 0:
+        return x ** (1 / n)
+    else:
+        return -((-x) ** (1 / n))
+    
+    
