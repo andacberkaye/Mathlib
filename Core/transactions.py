@@ -509,3 +509,54 @@ def percentage(value: float, percent: float) -> float:
     """
 
     return value * percent / 100
+
+def round_number(x: float) -> int:
+    """
+    Rounds a number to the nearest integer.
+
+    Parameters:
+        x (float):
+            The number to be rounded.
+
+    Returns:
+        int:
+            The nearest integer to the given number.
+    """
+    if x >= 0:
+        return int(x + 0.5)
+    else:
+        return int(x - 0.5)
+
+
+def ceil_number(x: float) -> int:
+    """
+    Returns the smallest integer greater than or equal to x.
+
+    Parameters:
+        x (float):
+            The number to be rounded up.
+
+    Returns:
+        int:
+            The smallest integer greater than or equal to x.
+    """
+    if x == int(x):
+        return int(x)
+    return int(x) + (1 if x > 0 else 0)
+
+
+def floor_number(x: float) -> int:
+    """
+    Returns the greatest integer less than or equal to x.
+
+    Parameters:
+        x (float):
+            The number to be rounded down.
+
+    Returns:
+        int:
+            The greatest integer less than or equal to x.
+    """
+    if x == int(x):
+        return int(x)
+    return int(x) - (1 if x < 0 else 0)
