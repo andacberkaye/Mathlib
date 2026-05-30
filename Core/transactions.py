@@ -439,3 +439,20 @@ def sqrt(a: float) -> float:
         raise ValueError("Square root of negative number is not real")
     return a ** 0.5
 
+def cube_root(x: float) -> float:
+    """
+    Calculates the cube root of a number.
+
+    The function returns the value which, when multiplied by itself
+    three times, gives the original number.
+
+    Parameters:
+        x (float):
+            The number whose cube root is to be calculated.
+
+    Returns:
+        float:
+            The cube root of the given number.
+    """
+
+    return absolute(x) ** (1 / 3)
