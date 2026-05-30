@@ -492,4 +492,20 @@ def nth_root(x: float, n: int) -> float:
     else:
         return -((-x) ** (1 / n))
     
-    
+def percentage(value: float, percent: float) -> float:
+    """
+    Calculates a percentage of a given value.
+
+    Parameters:
+        value (float):
+            The original value.
+
+        percent (float):
+            The percentage to calculate.
+
+    Returns:
+        float:
+            The calculated percentage of the value.
+    """
+
+    return value * percent / 100
