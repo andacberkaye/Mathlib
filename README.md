@@ -16,6 +16,7 @@ A lightweight Python math utility library providing basic arithmetic, number the
 - Modulus
 - Power
 - Absolute value
+- Rounding (round, ceil, floor)
 
 ### Statistics & Utilities
 - Minimum / Maximum
@@ -38,6 +39,15 @@ A lightweight Python math utility library providing basic arithmetic, number the
 ### Mathematical Functions
 - Factorial
 - Square root
+- Cube root
+- Nth root
+- Trigonometric functions (sin, cos, tan, cot)
+- Hypotenuse calculation
+
+### Advanced Mathematics
+- Taylor series based trigonometric calculations
+- Newton method square root approximation
+- Floating point safe calculations
 
 ---
 
@@ -60,6 +70,26 @@ Import the module
 ```
 
 ## Usage Examples
+
+### Advanced Math Functions
+
+```python
+ts.round_number(3.6)
+ts.ceil_number(3.1)
+ts.floor_number(3.9)
+
+ts.cube_root(27)
+ts.nth_root(16, 4)
+
+ts.percentage(200, 15)
+
+ts.sin(0)
+ts.cos(1.5708)
+ts.tan(0.7854)
+ts.cot(0.7854)
+
+ts.hypotenuse(3, 4)
+```
 
 ### Basic Operations
 
@@ -108,7 +138,9 @@ Import the module
 ## Roadmap
 
 -   Expand to 50+ functions
--   Add trigonometric functions (sin, cos, tan)
+-   Add full trigonometric system (sin, cos, tan, cot)
+-   Add root functions (cube root, nth root)
+-   Improve numerical accuracy and convergence control
 -   Add logarithmic functions
 -   Improve floating point precision handling
 -   Add unit tests using pytest
@@ -120,6 +152,8 @@ Import the module
 -   Some functions require at least one argument
 -   Floating point precision may affect range-based operations
 -   The project is not yet production-ready
+-   Trigonometric functions use Taylor series approximation
+-   Results may slightly differ from Python's math module due to floating point precision
 
 ## Status
 
