@@ -527,7 +527,6 @@ def round_number(x: float) -> int:
     else:
         return int(x - 0.5)
 
-
 def ceil_number(x: float) -> int:
     """
     Returns the smallest integer greater than or equal to x.
@@ -544,7 +543,6 @@ def ceil_number(x: float) -> int:
         return int(x)
     return int(x) + (1 if x > 0 else 0)
 
-
 def floor_number(x: float) -> int:
     """
     Returns the greatest integer less than or equal to x.
@@ -560,3 +558,110 @@ def floor_number(x: float) -> int:
     if x == int(x):
         return int(x)
     return int(x) - (1 if x < 0 else 0)
+
+import math
+
+
+def sin(x: float) -> float:
+    """
+    Calculates sine using Taylor series approximation.
+
+    Parameters:
+        x (float):
+            Angle in radians.
+
+    Returns:
+        float:
+            Approximate sine value.
+    """
+    result = 0.0
+    term = x
+
+    for i in range(10):
+        result += term
+        term *= -x * x / ((2 * i + 2) * (2 * i + 3))
+
+    return result
+
+
+def cos(x: float) -> float:
+    """
+    Calculates cosine using Taylor series approximation.
+
+    Parameters:
+        x (float):
+            Angle in radians.
+
+    Returns:
+        float:
+            Approximate cosine value.
+    """
+    result = 1.0
+    term = 1.0
+
+    for i in range(1, 10):
+        term *= -x * x / ((2 * i - 1) * (2 * i))
+        result += term
+
+    return result
+
+
+def tan(x: float) -> float:
+    """
+    Calculates tangent as sin(x) / cos(x).
+
+    Parameters:
+        x (float):
+            Angle in radians.
+
+    Returns:
+        float:
+            Approximate tangent value.
+    """
+    c = cos(x)
+    if abs(c) < 1e-12:
+        raise ValueError("tan undefined (cos(x) too close to 0)")
+    return sin(x) / c
+
+
+def cot(x: float) -> float:
+    """
+    Calculates cotangent as cos(x) / sin(x).
+
+    Parameters:
+        x (float):
+            Angle in radians.
+
+    Returns:
+        float:
+            Approximate cotangent value.
+    """
+    s = sin(x)
+    if abs(s) < 1e-12:
+        raise ValueError("cot undefined (sin(x) too close to 0)")
+    return cos(x) / s
+
+
+def hypotenuse(a: float, b: float) -> float:
+    """
+    Calculates hypotenuse using Newton's method (no math.sqrt).
+
+    Parameters:
+        a (float):
+            First side.
+
+        b (float):
+            Second side.
+
+    Returns:
+        float:
+            Hypotenuse value.
+    """
+    value = a * a + b * b
+
+    result = value
+    for _ in range(10):
+        result = (result + value / result) / 2
+
+    return result
+
